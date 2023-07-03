@@ -26,7 +26,7 @@ char *_strpbrk(char *s, char *accept)
 		}
 	}
 	if (val == -1)
-		return (accept + i + 1);
+		return (0);
 	else
 		return (&s[val]);
 }
