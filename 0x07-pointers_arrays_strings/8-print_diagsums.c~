@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+/**
+ * print_diagsums - prints the sum of the two diagonals of a
+ * square matrix of integers
+ * @a: pointer to integer matrix
+ * @size: size of the square matrix, which is number of rows or columns
+ */
+
+void print_diagsums(int *a, int size)
+{
+	long int sum1 = 0;
+	long int sum2 = 0;
+	int i;
+	int sz_int = (int)sizeof(int);
+
+	printf("size of integer in bytes is: %d\n", sz_int);
+
+	for (i = 0; i < (size * size); i++)
+	{
+		if (i % (size + 1) == 0)
+		{
+			sum1 += a[i];
+			printf("element included in sum1: %d\n", a[i]);
+		}
+		if ((i % (size - 1) == 0) && (i != 0) && (i != (size - 1)*(size - 1)))
+		{
+			sum2 += a[i];
+			printf("element included in sum2: %d\n", a[i]);
+		}
+	}
+	printf("%ld, %ld\n", sum1, sum2);
+}
