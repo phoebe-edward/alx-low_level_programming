@@ -1,0 +1,27 @@
+/**
+ * help - returns the natural square root of a number
+ * @l: number input
+ * @m: helping number, which can be the sqrt of l
+ * Return: the sqrt of l
+ */
+int help(int l, int m)
+{
+	if (m * m == l)
+		return (m);
+	if (m * m > l)
+		return (-1);
+	return (help(l, m + 1));
+}
+
+/**
+ * _sqrt_recursion - returns the natural square root of a number
+ * @n: number input
+ * Return: the sqrt of n
+ */
+
+int _sqrt_recursion(int n)
+{
+	if (n < 0)
+		return (-1);
+	return (help(n, 0));
+}
