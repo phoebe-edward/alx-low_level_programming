@@ -1,0 +1,42 @@
+/**
+ * str_len - gets the length of a string
+ * @str: input string
+ * Return: string length
+ */
+
+int str_len(char *str)
+{
+	if (*str == '\0')
+		return (0);
+	return (1 + str_len(s + 1));
+}
+
+/**
+ * help - returns 1 if palindrome, 0 if not
+ * @s_first: pointer to first character
+ * @s_last: pointer to last character
+ * Return: 0 or 1
+ */
+
+int help(char *s_first, char *s_last)
+{
+	if (s_first >= s_last)
+		return (1);
+	if (*s_first != *s_last)
+		return (0);
+	return (help(s_first + 1, s_last - 1));
+}
+
+/**
+ * is_palindrome - returns 1 if a string is a palindrome and 0 if not
+ * @s: character pointer
+ * Return: 0 or 1
+ */
+
+int is_palindrome(char *s)
+{
+	int len = str_len(s);
+	char *s_last = s + len - 1;
+
+	return (help(s, s_last));
+}
