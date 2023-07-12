@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+/**
+ * main - print change
+ * @argc: number of args
+ * @argv: args
+ * Return: 0 or 1
+ */
+int main(int argc, char *argv[])
+{
+	int coins = 0, change;
+
+	if (argc != 2)
+	{
+		(void)argv;
+		printf("Error\n");
+		return (1);
+	}
+	change = atoi(argv[1]);
+	if (change < 0)
+	{
+		printf("0\n");
+		return (0);
+	}
+	coins += change / 25;
+	change = change % 25;
+	coins += change / 10;
+	change = change % 10;
+	coins += change / 5;
+	change = change % 5;
+	coins += change / 2;
+	change = change % 2;
+	coins += change / 1;
+	change = change % 1;
+	printf("%d\n", coins);
+	return (0);
+}
