@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <stddef.h>
 /**
  * array_iterator - performs a function on array elements
@@ -7,10 +8,13 @@
  */
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
-	int i;
+	size_t i;
 
-	for (i = 0 ; i < (int)size; i++)
+	if (action != NULL && array != NULL)
 	{
-		action(array[i]);
+		for (i = 0 ; i < size; i++)
+		{
+			action(array[i]);
+		}
 	}
 }
