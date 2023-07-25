@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include "function_pointers.h"
 /**
  * print_name - function that takes another function as pointer
  * @name: pointer to name char (string)
@@ -6,5 +8,6 @@
 
 void print_name(char *name, void (*f)(char *))
 {
-	f(name);
+	if (name != NULL)
+		f(name);
 }
