@@ -31,7 +31,7 @@ void _print_string(va_list list)
 {
 	char *s = va_arg(list, char*);
 
-	s = (s == NULL ? "(nil)": s);
+	s = (s == NULL ? "(nil)" : s);
 	printf("%s", s);
 }
 /**
@@ -64,7 +64,7 @@ void print_all(const char * const format, ...)
 			j++;
 		}
 		i++;
-	} 
+	}
 	va_end(args);
 	printf("\n");
 }
