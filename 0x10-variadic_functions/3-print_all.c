@@ -31,12 +31,7 @@ void _print_string(va_list list)
 {
 	char *s = va_arg(list, char*);
 
-	if (s != NULL)
-	{
-		printf("%s", s);
-		return;
-	}
-	printf("(nil)");
+	printf("%s", s);
 }
 /**
  * print_all - prints all
