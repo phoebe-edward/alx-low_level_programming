@@ -40,7 +40,7 @@ void _print_string(va_list list)
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	int i = 0, j;
+	int i = 0, j, count = 0;
 	form_t arr[] = {
 		{'c', _print_char},
 		{'i', _print_int},
@@ -55,9 +55,10 @@ void print_all(const char * const format, ...)
 		{
 			if (format[i] == arr[j].c)
 			{
-				if (i != 0)
+				if (count != 0)
 					printf(", ");
 				arr[j].func(args);
+				count++;
 			}
 			j++;
 		}
