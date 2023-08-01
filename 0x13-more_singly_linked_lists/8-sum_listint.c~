@@ -1,0 +1,10 @@
+#include "lists.h"
+/**
+ * sum_listint - sum of list integers
+ * @head: pointer to the head of list
+ * Return: sum
+ */
+int sum_listint(listint_t *head)
+{
+	
+}
