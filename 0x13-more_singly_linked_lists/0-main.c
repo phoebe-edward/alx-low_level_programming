@@ -12,6 +12,7 @@ int main(void)
 {
     listint_t *head;
     listint_t *new;
+    listint_t *new1;
     listint_t hello = {8, NULL};
     size_t n;
 
@@ -28,5 +29,9 @@ int main(void)
     n = print_listint(head);
     printf("-> %lu elements\n", n);
     free(new);
+    printf("New code:\n");
+    new1 = NULL;
+    n = print_listint(new1);
+    printf("-> %lu elements\n", n);
     return (0);
 }
