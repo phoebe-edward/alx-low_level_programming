@@ -1,0 +1,24 @@
+#include "lists.h"
+/**
+ * free_listint_safe - free list
+ * @h: pointer to pointer to the list
+ * Return: the list size
+ */
+size_t free_listint_safe(listint_t **h);
+{
+	int count = 0;
+	listint_t *ptr1, *ptr2;
+
+	if (h == NULL || *h == NULL)
+		return (count);
+	ptr1 = *h;
+	while (ptr1 != NULL)
+	{
+		count++;
+		ptr2 = ptr1->next;
+		free(ptr1);
+		ptr1 = ptr2;
+	}
+	*h = NULL;
+	return (count);
+}
