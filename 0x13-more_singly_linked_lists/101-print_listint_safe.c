@@ -15,7 +15,7 @@ size_t print_listint_safe(const listint_t *head)
 	while (ptr != NULL)
 	{
 		count++;
-		printf("[%p] %d\n", (void *)&ptr, ptr->n);
+		printf("[%p] %d\n", (void *)ptr, ptr->n);
 		ptr = ptr->next;
 	}
 	return (count);
