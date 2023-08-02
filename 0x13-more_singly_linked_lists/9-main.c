@@ -10,21 +10,30 @@
  */
 int main(void)
 {
-    listint_t *head;
-
-    head = NULL;
-    add_nodeint_end(&head, 0);
-    add_nodeint_end(&head, 1);
-    add_nodeint_end(&head, 2);
-    add_nodeint_end(&head, 3);
-    add_nodeint_end(&head, 4);
-    add_nodeint_end(&head, 98);
-    add_nodeint_end(&head, 402);
-    add_nodeint_end(&head, 1024);
-    print_listint(head);
-    printf("-----------------\n");
-    insert_nodeint_at_index(&head, 5, 4096);
-    print_listint(head);
-    free_listint2(&head);
-    return (0);
+	listint_t *head, *head2, *head3;
+	head = NULL;
+	add_nodeint_end(&head, 0);
+	add_nodeint_end(&head, 1);
+	add_nodeint_end(&head, 2);
+	add_nodeint_end(&head, 3);
+	add_nodeint_end(&head, 4);
+	add_nodeint_end(&head, 98);
+	add_nodeint_end(&head, 402);
+	add_nodeint_end(&head, 1024);
+	print_listint(head);
+	printf("-----------------\n");
+	insert_nodeint_at_index(&head, 5, 4096);
+	print_listint(head);
+	free_listint2(&head);
+	printf("-----------------\n");
+	head2 = NULL;
+	printf("%p\n", (void *)&head2);
+	head2 = insert_nodeint_at_index(&head2, 0, 98);
+	print_listint(head2);
+	free_listint2(&head2);
+	printf("-----------------\n");
+	head3 = insert_nodeint_at_index(NULL, 0, 98);
+	print_listint(head3);
+	free_listint2(&head3);
+	return (0);
 }
