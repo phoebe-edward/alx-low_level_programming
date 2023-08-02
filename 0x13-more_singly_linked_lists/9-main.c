@@ -31,9 +31,5 @@ int main(void)
 	head2 = insert_nodeint_at_index(&head2, 0, 98);
 	print_listint(head2);
 	free_listint2(&head2);
-	printf("-----------------\n");
-	head3 = insert_nodeint_at_index(NULL, 0, 98);
-	print_listint(head3);
-	free_listint2(&head3);
 	return (0);
 }
