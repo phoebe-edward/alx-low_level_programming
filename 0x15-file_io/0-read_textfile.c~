@@ -1,0 +1,29 @@
+#include "main.h"
+/**
+ * read_textfile - read text file
+ * @filename: char pointer
+ * @letters: number of letters to be read
+ * Return: actual number of letters read
+ */
+ssize_t read_textfile(const char *filename, size_t letters)
+{
+	char *c = malloc(sizeof(char) * letters);
+	int fd, size, i, j;
+
+	if (filename == NULL || c == NULL)
+		return (0);
+	fd = open(filename, O_RDWR);
+	if (fd < 0)
+		return (0);
+	size = read(fd, c, letters);
+	if (size < 0)
+		return (0);
+	j = write(STDOUT_FILENO, c, size);
+	if (j < 0)
+		return (0);
+	i = close(fd);
+	if (i < 0)
+		return (0);
+	free(c);
+	return (j);
+}
