@@ -20,7 +20,7 @@ int main(int ac, char **av)
 	if (access(av[2], F_OK) == -1)
 		fd_to = creat(av[2], 0664);
 	else
-		fd_to = open(av[2], O_CREAT, O_WRONLY | O_TRUNC);
+		fd_to = open(av[2], O_WRONLY | O_TRUNC);
 	if (fd_to == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]), exit(99);
 	buf = malloc(1024 * sizeof(char));
