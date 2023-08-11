@@ -20,7 +20,7 @@ int main(int ac, char **av)
 	if (access(av[2], F_OK) == -1)
 		fd_to = creat(av[2], 0664);
 	else
-		fd_to = open(av[2], O_WRONLY | O_EXCL);
+		fd_to = open(av[2], O_WRONLY);
 	buf = malloc(1024 * sizeof(char));
 	while (size_r > 0)
 	{
