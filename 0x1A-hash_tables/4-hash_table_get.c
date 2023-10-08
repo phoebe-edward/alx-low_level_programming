@@ -1,0 +1,28 @@
+#include "hash_tables.h"
+/**
+ * hash_table_get - retrieve an element from hash table
+ * @ht: table pointer
+ * @key: key of the element
+ * Return: value of the element or NULL if key not found
+ */
+char *hash_table_get(const hash_table_t *ht, const char *key)
+{
+	unsigned long int index;
+	hash_node_t *current = NULL;
+
+	if (key == NULL || *key == '\0' || ht == NULL)
+		return (NULL);
+	index = key_index((const unsigned char *)key, ht->size);
+	if (ht->array[index] == NULL)
+		return (NULL);
+	else if (strcmp((ht->array[index])->key, key) == 0)
+		return ((ht->array[index])->value);
+	current = ht->array[index];
+	while (current->next != NULL)
+	{
+		if (strcmp(current->key, key) == 0)
+			return (current->value);
+		current = current->next;
+	}
+	return (NULL);
+}
