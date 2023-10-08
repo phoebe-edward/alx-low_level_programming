@@ -28,13 +28,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else
 	{
 		current = ht->array[index];
-		if (strcmp(current->key, key) == 0)
-		{
-			current->value = strdup(value);
-			free(node->key), free(node->value), free(node);
-			return (1);
-		}
-		while (current->next != NULL)
+		while (current != NULL)
 		{
 			if (strcmp(current->key, key) == 0)
 			{
